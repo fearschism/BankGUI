@@ -1,5 +1,4 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.FlowLayout;
 import net.miginfocom.swing.MigLayout;
@@ -7,15 +6,14 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Cursor;
-
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import Client.*;
 
 public class DashBoard {
-
 	private JFrame frmBankV;
 
 	/**
@@ -46,7 +44,7 @@ public class DashBoard {
 	 */
 	private void initialize() {
 		frmBankV = new JFrame();
-		frmBankV.setTitle("Bank V0.03");
+		frmBankV.setTitle("Bank V0.05");
 		frmBankV.setBounds(100, 100, 450, 300);
 		frmBankV.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmBankV.getContentPane().setLayout(null);
@@ -64,8 +62,9 @@ public class DashBoard {
 		btnNewButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmBankV.dispose();
-				AddClient Window = new AddClient();
+				frmBankV.setVisible(false);
+					new AddClient();
+				
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -73,7 +72,7 @@ public class DashBoard {
 		btnNewButton.setFocusable(false);
 		panel.add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("Bank System V0.03");
+		JLabel lblNewLabel = new JLabel("Bank System V0.05");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblNewLabel.setBounds(146, 11, 172, 27);
 		panel.add(lblNewLabel);
@@ -93,6 +92,7 @@ public class DashBoard {
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Deposit");
+		btnNewButton_2.setEnabled(false);
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnNewButton_2.setFocusable(false);
 		btnNewButton_2.setBackground(Color.WHITE);
@@ -106,6 +106,7 @@ public class DashBoard {
 		panel.add(lblNewLabel_1);
 		
 		JButton btnDisplayClient = new JButton("Display Client");
+		btnDisplayClient.setEnabled(false);
 		btnDisplayClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}

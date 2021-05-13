@@ -5,22 +5,32 @@ public class Client {
 
 	private String Cname;
 	private int CBalance;
-	private int ID;
-	private LinkedList<Client> C = new LinkedList<Client>(); //storing Client details;
+	private int ID; //storing Client details;
 	int Limit1;
 	int nbC = 0;
-	public Client(String name,int B,int id,int size) {
+	public Client(String name,int B,int id) {
 		this.Cname = name;
 		this.CBalance = B;
 		this.ID = id;
-		this.Limit1 = size;
-		nbC = 0;
 }
-	
-	public boolean AddC(Client cc) {
-		if(C.size() == Limit1) return false;
-		C.set(nbC++, cc);
-		return true;
-}
+	public String getCname() {
+		return Cname;
+	}
+	public void setCname(String cname) {
+		Cname = cname;
+	}
+	public int getCBalance() {
+		return CBalance;
+	}
+	public void setCBalance(int cBalance) {
+		CBalance = cBalance;
+	}
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
+	}
 
+	
 }
