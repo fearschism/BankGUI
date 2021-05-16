@@ -29,9 +29,9 @@ public class DisplayC extends DataHolder{
 	JButton forward;
 	int bal;
 	int id;
-	boolean okname = true;
-	boolean okbal = true;
-	boolean okID = true;
+	boolean okname;
+	boolean okbal;
+	boolean okID;
 	/**
 	 * Launch the application.
 	 */
@@ -132,6 +132,7 @@ public class DisplayC extends DataHolder{
 		
 		editname.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				okname = true;
 				String name = JOptionPane.showInputDialog("Enter new name: ");
 				if(name.equals("")) {
 					okname = false;
@@ -152,7 +153,7 @@ public class DisplayC extends DataHolder{
 		
 		editbal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				okbal = true;
 				try {
 					bal =Integer.parseInt(JOptionPane.showInputDialog("Enter new balance: "));
 				} catch (NumberFormatException w) {
@@ -179,6 +180,7 @@ public class DisplayC extends DataHolder{
 		
 		editid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				okID = true;
 				try {
 					id =Integer.parseInt(JOptionPane.showInputDialog("Enter new ID: "));
 				} catch (NumberFormatException w) {
@@ -192,9 +194,11 @@ public class DisplayC extends DataHolder{
 				}
 				else if(bnk.searchList(id)>=0 && id != bnk.C.get(count).getID()) {
 					JOptionPane.showMessageDialog(null,"ID already exists","Error",JOptionPane.ERROR_MESSAGE);
+					okID = false;
 				}
 				else if(id == bnk.C.get(count).getID()) {
 					JOptionPane.showMessageDialog(null,"Same ID","Error",JOptionPane.ERROR_MESSAGE);
+					okID = false;
 				}
 				else if(okID) {
 					bnk.C.get(count).setID(id);

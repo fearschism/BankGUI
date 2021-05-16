@@ -54,7 +54,7 @@ public class DashBoard extends DataHolder{
 	 */
 	private void initialize() {
 		frmBankV = new JFrame();
-		frmBankV.setTitle("Bank V0.1A");
+		frmBankV.setTitle("Bank V0.1B");
 		frmBankV.setBounds(100, 100, 450, 300);
 		frmBankV.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmBankV.getContentPane().setLayout(null);
@@ -82,7 +82,7 @@ public class DashBoard extends DataHolder{
 		btnNewButton.setFocusable(false);
 		panel.add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("Bank System V0.1A");
+		JLabel lblNewLabel = new JLabel("Bank System V0.1B");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblNewLabel.setBounds(146, 11, 177, 27);
 		panel.add(lblNewLabel);
