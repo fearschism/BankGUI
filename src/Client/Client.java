@@ -32,7 +32,7 @@ public class Client {
 		ID = iD;
 	}
 	public String Display() { //used for the display functionality
-		return "Name: " + Cname + " Balance: " + CBalance + " ID: " + ID;
+		return Cname + "  ID: " + ID;
 	}
 	@Override
 	public String toString() { //used for file writing and reading.

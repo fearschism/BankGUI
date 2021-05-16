@@ -5,12 +5,14 @@ import java.awt.Color;
 import java.awt.Cursor;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 import java.awt.Font;
 import java.awt.Label;
 
 import javax.swing.JTextField;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -58,6 +60,7 @@ public class AddClient extends DataHolder {
 		frmAddClient.getContentPane().setLayout(null);
 		frmAddClient.setVisible(true);
 		frmAddClient.setResizable(false);
+		frmAddClient.setIconImage(new ImageIcon(this.getClass().getResource("/usd-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95103.png")).getImage());
 		JLabel lblNewLabel = new JLabel("Client's name:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel.setBounds(20, 49, 106, 26);
@@ -121,11 +124,17 @@ public class AddClient extends DataHolder {
 					lblNewLabel_4.setForeground(Color.green);
 					lblNewLabel_4.setText("OK");
 				}
+				if(ID < 0) {
+					okID = false;
+					lblNewLabel_4.setText("must be positive");
+					lblNewLabel_4.setForeground(Color.red);
+				}
 				if(x.equals("")) {
 					okN = false;
 					lblNewLabel_1.setText("Name is required");
 					lblNewLabel_1.setForeground(Color.red);
 				}
+			
 				else {
 					okN = true;
 					lblNewLabel_1.setText("OK");

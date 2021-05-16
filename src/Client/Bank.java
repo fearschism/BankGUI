@@ -114,7 +114,7 @@ public class Bank {
 		String[] names = new String[C.size()];
 		if(C.size() == 0) return names;
 		for(int i=0;i<names.length;i++) {
-			names[i] = i+1 + "- " +C.get(i).getCname();
+			names[i] = i+1 + "- " +C.get(i).Display();
 		}
 		return names;
 	}
